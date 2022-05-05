@@ -68,7 +68,15 @@ public class TestProjectApplication {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 		MathContext mc = new MathContext(7);
 		
+		BigDecimal aumento = new BigDecimal(1.1);
+		
 		for (int i =0;i<list.size();i++) {
+			
+			// 3.4 - Aumentando salário em 10%
+			list.get(i).setSalario(list.get(i).getSalario().multiply(aumento));
+			
+			
+			
 			System.out.println("======================");
 			System.out.println("Nome : " + list.get(i).getNome());
 			System.out.println("Função : " + list.get(i).getFuncao());
