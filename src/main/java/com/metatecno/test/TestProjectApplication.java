@@ -1,6 +1,9 @@
 package com.metatecno.test;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ import com.metatecno.test.model.Funcionario;
 @SpringBootApplication
 public class TestProjectApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		SpringApplication.run(TestProjectApplication.class, args);
 		/*
 		3.1 – Inserir todos os funcionários, na mesma ordem e informações da tabela acima.
@@ -60,8 +63,17 @@ public class TestProjectApplication {
 		
 		list.remove(joao);
 		
+		//3.3 - Impressao dos funcionarios
+		
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		MathContext mc = new MathContext(7);
+		
 		for (int i =0;i<list.size();i++) {
-		System.out.println(list.get(i).getNome());
+			System.out.println("======================");
+			System.out.println("Nome : " + list.get(i).getNome());
+			System.out.println("Função : " + list.get(i).getFuncao());
+			System.out.println("Salário : R$ " + list.get(i).getSalario().round(mc));
+			System.out.println("Data de Nascimento : " + list.get(i).getDataNascimento().toString());
 	}
 		
 		
