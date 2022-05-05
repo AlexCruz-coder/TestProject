@@ -55,10 +55,15 @@ public class TestProjectApplication {
 		list.add(laura);
 		list.add(heloisa);
 		list.add(helena);
-
+	
+		//3.2 - Remover o usuario João da lista
+		
+		list.remove(joao);
+		
 		for (int i =0;i<list.size();i++) {
-			System.out.println(list.get(i).getNome());
-		}
+		System.out.println(list.get(i).getNome());
+	}
+		
 		
 	}
 
